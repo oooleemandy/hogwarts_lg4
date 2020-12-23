@@ -1,16 +1,16 @@
 {
-  "uid" : "df4f670d8e35a9c1",
-  "name" : "test_success",
-  "fullName" : "test_alluredemo1#test_success",
-  "historyId" : "16f39835d7d4ad2a0e7d06287ff2b188",
+  "uid" : "ddc7418cbd12a94e",
+  "name" : "test_broken",
+  "fullName" : "test_alluredemo1#test_broken",
+  "historyId" : "62e3d0efc8226834b589024da8762ee8",
   "time" : {
-    "start" : 1603938322847,
-    "stop" : 1603938322847,
-    "duration" : 0
+    "start" : 1603938323229,
+    "stop" : 1603938323230,
+    "duration" : 1
   },
-  "description" : "this test succeeds",
-  "descriptionHtml" : "<p>this test succeeds</p>\n",
-  "status" : "passed",
+  "status" : "broken",
+  "statusMessage" : "Exception: oops",
+  "statusTrace" : "def test_broken():\n>       raise Exception('oops')\nE       Exception: oops\n\ntest_alluredemo1.py:19: Exception",
   "flaky" : false,
   "beforeStages" : [ ],
   "afterStages" : [ ],
@@ -43,9 +43,13 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
-    "categories" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
     "tags" : [ ]
   },
-  "source" : "df4f670d8e35a9c1.json",
+  "source" : "ddc7418cbd12a94e.json",
   "parameterValues" : [ ]
 }

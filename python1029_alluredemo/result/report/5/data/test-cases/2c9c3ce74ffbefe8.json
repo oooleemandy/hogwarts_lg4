@@ -1,18 +1,16 @@
 {
-  "uid" : "b333572bf054be88",
-  "name" : "test_skip",
-  "fullName" : "test_alluredemo1#test_skip",
-  "historyId" : "9af340dd435adc1e4fb5c3769d9a146f",
+  "uid" : "2c9c3ce74ffbefe8",
+  "name" : "test_success",
+  "fullName" : "test_alluredemo1#test_success",
+  "historyId" : "16f39835d7d4ad2a0e7d06287ff2b188",
   "time" : {
-    "start" : 1603938323212,
-    "stop" : 1603938323212,
+    "start" : 1603938322847,
+    "stop" : 1603938322847,
     "duration" : 0
   },
-  "description" : "this test is skipped",
-  "descriptionHtml" : "<p>this test is skipped</p>\n",
-  "status" : "skipped",
-  "statusMessage" : "Skipped: for a reason!",
-  "statusTrace" : "('C:\\\\Users\\\\limandi\\\\PycharmProjects\\\\hogwarts_lg4\\\\python1029_alluredemo\\\\result\\\\test_alluredemo1.py', 15, 'Skipped: for a reason!')",
+  "description" : "this test succeeds",
+  "descriptionHtml" : "<p>this test succeeds</p>\n",
+  "status" : "passed",
   "flaky" : false,
   "beforeStages" : [ ],
   "afterStages" : [ ],
@@ -48,6 +46,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "b333572bf054be88.json",
+  "source" : "2c9c3ce74ffbefe8.json",
   "parameterValues" : [ ]
 }

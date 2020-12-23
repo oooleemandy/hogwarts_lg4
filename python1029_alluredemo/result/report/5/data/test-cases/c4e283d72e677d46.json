@@ -1,16 +1,18 @@
 {
-  "uid" : "ac29e43dfb0ee9b4",
-  "name" : "test_broken",
-  "fullName" : "test_alluredemo1#test_broken",
-  "historyId" : "62e3d0efc8226834b589024da8762ee8",
+  "uid" : "c4e283d72e677d46",
+  "name" : "test_failure",
+  "fullName" : "test_alluredemo1#test_failure",
+  "historyId" : "9e8d23832460ad3c87806390b91ae72c",
   "time" : {
-    "start" : 1603938323229,
-    "stop" : 1603938323230,
+    "start" : 1603938322865,
+    "stop" : 1603938322866,
     "duration" : 1
   },
-  "status" : "broken",
-  "statusMessage" : "Exception: oops",
-  "statusTrace" : "def test_broken():\n>       raise Exception('oops')\nE       Exception: oops\n\ntest_alluredemo1.py:19: Exception",
+  "description" : "this test fails",
+  "descriptionHtml" : "<p>this test fails</p>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False",
+  "statusTrace" : "def test_failure():\n        \"\"\"this test fails\"\"\"\n>       assert False\nE       assert False\n\ntest_alluredemo1.py:10: AssertionError",
   "flaky" : false,
   "beforeStages" : [ ],
   "afterStages" : [ ],
@@ -44,12 +46,12 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ {
-      "name" : "Test defects",
+      "name" : "Product defects",
       "matchedStatuses" : [ ],
       "flaky" : false
     } ],
     "tags" : [ ]
   },
-  "source" : "ac29e43dfb0ee9b4.json",
+  "source" : "c4e283d72e677d46.json",
   "parameterValues" : [ ]
 }
