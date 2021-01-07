@@ -1,26 +1,48 @@
+import yaml
+
 from test_pytest.core.calc import Calc
 import pytest
 import allure
 
 
+
+'''yaml文件驱动'''
+
+def load_data(path='data.yaml'):
+     with open(path) as f:
+         data = yaml.safe_load(f)
+         keys = ",".join(data[0].keys())
+         values = [d.values() for d in data]
+         return {'keys':keys,'values':values}
+
 class TestCalc:
 
     #类执行的时候初始化一次
-    def setup_class(self):
-        self.calc=Calc()
+    def setup_class(cls):
+
+        cls.calc=Calc()
+
+
+
+
+    @allure.step
+    def simple_step(self, step_param1, step_param2=None):
+        pass
 
 
 
     #乘法的参数化
-    @pytest.mark.parametrize('a,b,c',[
-        [1,2,2],
-        [-1,-1,1],
-        [1,-1,-1],
-        [1,0,0]
-    ])
+    @pytest.mark.parametrize(load_data()['keys'],load_data()['values'])
     #乘法方法
     @allure.story("乘法模块正向用例")
     def test_mult(self,a,b,c):
+        #加入图片地址，图片名称，图片类型
+        allure.attach.file(
+            r'C:\Users\limandi\Pictures\pic\Screenshot.jpg',
+            "测试图片",
+            allure.attachment_type.JPG
+        )
+        self.simple_step(f'{a} {b} {c}')
         assert self.calc.mul(a,b) == c
 
 

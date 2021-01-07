@@ -12,7 +12,7 @@ class BasePage:
     #初始化
     #构造方法 会自动调用
     def __init__(self,driver:WebDriver=None):
-        #如果不传driver，每个页面都要初始化一次driver。下面复用driver，而不是每次调用。类型提示
+        #如果不传driver，每个页面都要初始化一次driver。下面复用driver，而不是每次调用。当testcase很多时不用每次都新初始化driver
         if driver is None:
             self._driver=webdriver.Chrome()
         else:

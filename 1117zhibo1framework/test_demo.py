@@ -11,7 +11,8 @@ def load_data(path):
     with open(path, encoding='utf-8') as f:w
     return yaml.load(f)
 
-def test_load_data()
+def test_load_data():
+    pass
 
 
 
