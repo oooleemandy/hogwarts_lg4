@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# 基类，用来完成一些初始化操作，存放最基本的方法，比如实例化driver, find....
+'''
+基类，用来完成一些初始化操作，存放最基本的方法，比如实例化driver, find....
+'''
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -12,6 +15,7 @@ class BasePage:
     _base_url = ""
 
     def __init__(self, driver: WebDriver = None):
+        '''如果driver=NONE时，则进行初始化。否则，复用driver'''
         if driver == None:
             option = Options()
             option.debugger_address = "127.0.0.1:9222"
@@ -20,6 +24,7 @@ class BasePage:
         else:
             self.driver = driver
 
+        '''如果，url不为空，则get地址。url为空则复用'''
         if self._base_url != "":
             self.driver.get(self._base_url)
 
@@ -29,5 +34,8 @@ class BasePage:
     def finds(self, by, locator):
         return self.driver.find_elements(by, locator)
 
+    '''
+    封装显示等待方法。直到元素可被点击
+    '''
     def wait_for_click(self, locator, timeout=10):
         WebDriverWait(self.driver, timeout).until(expected_conditions.element_to_be_clickable(locator))
